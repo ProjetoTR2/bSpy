@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bSpy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h2>Imagens Salvas</h2>
+  </br>
+
+  <% @images.each do |image| %>
+    <%= image.name %>
+    <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
+    </br>
+    </br>
+  <%end%>
+</body>
+</html>

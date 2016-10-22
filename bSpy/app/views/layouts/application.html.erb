@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bSpy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="/home" style="color:white;">bSpy</a>
+  </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01" style="background: #4682B4;">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/imagens" style="color:white;">Imagens</a></li>
+
+        <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">
+              Admin <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" style="background: #4682B4;">
+              <li><a href="/users" class="blue_menu">Usuários</a></li>
+            </ul>
+          </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+</nav><!-- /navbar -->
+
+<%= yield %>
+</body>
+</html>
