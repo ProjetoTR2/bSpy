@@ -8,7 +8,7 @@ def main():
 	image = camera.getImage()
 	image.show()
 	image.save("mesquita.png")
-	r = requests.post("http://localhost:3000/salvar", data={'name': "teste", 'file':open('mesquita.png', 'rb')})
+	r = requests.post("http://localhost:3000/salvar", data={'name': "teste", 'file':open('mesquita.png', 'rb').read()})
 	r.should_close = True
 	print(r.status_code, r.reason)
 
