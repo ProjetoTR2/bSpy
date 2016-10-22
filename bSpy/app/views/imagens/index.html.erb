@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>bSpy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <h2>Imagens Salvas</h2>
-  </br>
+    <head>
+        <title>bSpy</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="row">
+                <br><br>
+                <h4 class="light center-align">Imagens Salvas</h4>
+            </div>
+            
+            </br>
 
-  <% @images.each do |image| %>
-    <%= image.name %>
-    <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
-    </br>
-    </br>
-  <%end%>
-</body>
+            <div class="row">
+                <div class="col s4">
+            
+                    <div class="card">
+                        <div class="card-image">
+                            <% @images.each do |image| %>
+                            <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
+                            <span class="card-title"><%= image.name %></span>
+                        </div>
+                        <div class="card-content">
+                            <p>Data e etc.</p>
+                        </div>
+                        <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </br>
+            </br>
+        </div>
+        <%end%>
+    </body>
 </html>
