@@ -1,4 +1,5 @@
 class ImagensController < ApplicationController
+  require 'base64'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   skip_before_filter :verify_authenticity_token
@@ -12,8 +13,8 @@ class ImagensController < ApplicationController
   	p params[:file].size
   	@imagem = Image.new
   	@imagem.name = params[:name]
-  	@imagem.data = params[:file]
-  	@imagem.file = params[:file]
+  	# @imagem.data = params[:file]
+  	@imagem.file = Base64.decode64(params[:file])
   	@imagem.save
   end
 
