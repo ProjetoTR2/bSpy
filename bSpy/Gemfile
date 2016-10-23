@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 
 
+# materialize
+gem 'materialize-sass'
+
+# fancybox
+gem 'fancybox2-rails'
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
