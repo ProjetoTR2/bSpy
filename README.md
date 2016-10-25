@@ -1,7 +1,7 @@
 # bSpy
 Projeto de teleinformática e redes 2
 
-Este é o projeto desenvolvidos pelos alunos da Universidade de Brasília para a discplina do professor Jacir Luiz Bordim de teleinformática e redes 2.
+Este é o projeto desenvolvido pelos alunos da Universidade de Brasília para a discplina do professor Jacir Luiz Bordim de teleinformática e redes 2.
 Consiste em um sistema de monitoramento, onde uma camera captura imagens na presença de movimento e envia para uma api que persiste a imagem em um banco de dados.
 
 Ele é baseado no Rails 4.2.6
