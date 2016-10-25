@@ -7,7 +7,6 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-        <div class="container home">
             
             <div class="row">
                 <br><br>
@@ -15,29 +14,26 @@
             </div>
             
             </br>
-            <div class="row">
-                <div class="col s4">
-            
-                    <div class="card">
-                        <div class="card-image">
-                            <% @images.each do |image| %>
-                            <a id="single_image" href="<%url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200")%>">
-                            <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
-                            </a>
-                            <span class="card-title"><%= image.name %></span>
-                        </div>
-                        <div class="card-content">
-                            <p>Data e etc.</p>
-                        </div>
-                        <div class="card-action">
+                    <% @images.each do |image| %>
+                    <div class="container home">
+                        <div class="row">
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a id="single_image" href="<%url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200")%>">
+                                        <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
+                                        </a>
+                                        <span class="card-title"><%= image.name %></span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Data e etc.</p>
+                                    </div>
+                                    <div class="card-action">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            </br>
-            </br>
-        </div>
-        <%end%>
+                    <%end%>
     </body>
 </html>
