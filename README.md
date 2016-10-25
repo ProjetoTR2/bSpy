@@ -1,8 +1,6 @@
 # bSpy
 Projeto de teleinformática e redes 2
 
-[![GitHub issues]https://github.com/gabrielmm1234/bSpy/issues.svg)](https://github.com/gabrielmm1234/bSpy/issues)
-
 Este é o projeto desenvolvidos pelos alunos da Universidade de Brasília para a discplina do professor Jacir Luiz Bordim de teleinformática e redes 2.
 Consiste em um sistema de monitoramento, onde uma camera captura imagens na presença de movimento e envia para uma api que persiste a imagem em um banco de dados.
 
