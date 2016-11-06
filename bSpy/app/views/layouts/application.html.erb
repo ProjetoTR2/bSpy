@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
 <ul id="dropdown1" class="dropdown-content">
 <!--   <li><a href="#!">one</a></li>
   <li><a href="#!">two</a></li>
@@ -21,12 +20,16 @@
     <nav class = " blue-grey lighten-5">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo center condensed light black-text thin">bSpy</a>
+            <% if user_signed_in? %>
             <ul class="left hide-on-med-and-down">
                 <li><a href="/home" class="black-text thin">Home</a></li>
                 <li><a href="#" class="black-text thin">Perfil</a></li>
                 <li><a href="/imagens" class="black-text thin">Imagens</a></li>
                 <li><a class="dropdown-button black-text thin" href="#" data-activates="dropdown1">Admin<i class="material-icons right"><!-- arrow_drop_down --></i></a></li>
             </ul>
+            <ul class="right hide-on-med-and-down">
+                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => "black-text thin right" %></li>
+            <% end %>
         </div>
     </nav>
 </div>
