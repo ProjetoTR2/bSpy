@@ -25,3 +25,5 @@ Ele é baseado no Rails 4.2.6
 #### Heroku
 
 O sistema em Rails tem que ser hospedado no [Heroku](http://www.heroku.com) durante sua fase de desenvolvimento.
+
+Update do readme para testar a integração com o Slack.
