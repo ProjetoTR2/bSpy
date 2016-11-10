@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   resources :profiles
-=======
   devise_for :users
   devise_scope :user do
     authenticated :user do
@@ -13,7 +11,6 @@ Rails.application.routes.draw do
     end
   end
   
->>>>>>> 77e870f67108640a877e7fc8b454804f8f53df61
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
