@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   resources :profiles
+=======
+  devise_for :users
+  devise_scope :user do
+    authenticated :user do
+      root 'home#home', as: :authenticated_root
+    end
+
+    unauthenticated :user do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+  
+>>>>>>> 77e870f67108640a877e7fc8b454804f8f53df61
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-   root 'home#home'
 
    get '/home' => 'home#home'
    get '/imagens' => 'imagens#index'
