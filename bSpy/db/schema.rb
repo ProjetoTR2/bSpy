@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20161110130129) do
   create_table "images", force: :cascade do |t|
     t.string   "name"
     t.binary   "data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.binary   "file"
+    t.datetime "data_de_criacao"
   end
 
   create_table "profiles", force: :cascade do |t|

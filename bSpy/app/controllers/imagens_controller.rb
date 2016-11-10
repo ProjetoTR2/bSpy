@@ -13,7 +13,7 @@ class ImagensController < ApplicationController
   	p params[:file].size
   	@imagem = Image.new
   	@imagem.name = params[:name]
-  	# @imagem.data = params[:file]
+    @imagem.data_de_criacao = DateTime.now
   	@imagem.file = Base64.decode64(params[:file])
   	@imagem.save
   end
