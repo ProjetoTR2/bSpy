@@ -28,6 +28,7 @@
                 <li><a class="dropdown-button black-text thin" href="#" data-activates="dropdown1">Admin<i class="material-icons right"><!-- arrow_drop_down --></i></a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
+                <li><div class="black-text thin" style="padding-right:30px"><%= current_user.name %></div></li>
                 <li><%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => "black-text thin right" %></li>
             <% end %>
         </div>
