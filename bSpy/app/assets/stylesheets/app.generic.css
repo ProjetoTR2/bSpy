@@ -8,12 +8,9 @@ body {
 	height: 100%;
     margin: 0 0 100px; /* bottom = footer height */
 }
-
 footer {
-    bottom: 0;
-    color: #707070;
+    position: absolute;
     left: 0;
-    position: relative; //changed to relative from fixed also works if position is not there
-    font-size: small;
-    width:100%;
+    bottom: 0;
+    width: 100%;
 }
