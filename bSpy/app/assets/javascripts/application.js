@@ -17,11 +17,6 @@
 //= require materialize-sprockets
 
 
-
-$(document).ready(function() {
-  $("a.fancybox").fancybox();
-});
-
 $(document).ready(function() {
   $('select').material_select();
 });
