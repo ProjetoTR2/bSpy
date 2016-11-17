@@ -40,7 +40,7 @@
                     <!-- <input type="text" style="display:none;" id="datainput"/> -->
                     <%= form_for Image.new, url: {action: "pesquisarData"},html:{method:"get"} do |f| %>
                         <%= f.text_field :data_de_criacao, class: "datepicker" %>
-                        <%= f.submit 'Enviar' %>
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     <% end %>
                 </div>
             </div>
