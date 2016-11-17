@@ -8,6 +8,11 @@
     <%= f.text_field :name, autofocus: true %>
   </div>
 
+<div class="input-field">
+    <%= f.label :profile %><br />
+    <%= f.select :profile_id, options_for_select(Profile.all.map { |c| [c.name, c.id] }), {class: "browser-default"} %>
+</div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
