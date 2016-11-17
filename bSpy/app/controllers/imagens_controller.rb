@@ -24,4 +24,11 @@ class ImagensController < ApplicationController
   	send_data @image.file, :type => 'image/png', :disposition => 'inline'
   end
 
+  def pesquisarData
+    @data = params[:image][:data_de_criacao]
+    @ano,@mes,@dia = @data.split("/",3)
+    # @images = Image.where("to_date(data_de_criacao,'DD/MM/YY') =  ?",@data)
+    @images = Image.where("date_part('year',data_de_criacao) = ? and date_part('month',data_de_criacao) = ? and date_part('day',data_de_criacao) = ?",@ano,@mes,@dia)
+  end
+
 end
