@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
    post '/salvar' => 'imagens#salvar'
 
+   get '/pesquisarData' =>'imagens#pesquisarData'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

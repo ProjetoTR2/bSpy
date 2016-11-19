@@ -10,14 +10,19 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require_tree .
 //= require jquery_ujs
 //= require fancybox
 //= require turbolinks
-//= require materialize-sprockets 
-//= require_tree .
+
+
+//= require materialize-sprockets
+
+
 
 
 $(document).ready(function() {
-  $("a.fancybox").fancybox();
+  $('select').material_select();
 });
+
+
