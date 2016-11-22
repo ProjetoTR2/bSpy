@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Profiles</h1>
-
+<% if can? :create, Profile %>
 <table>
   <thead>
     <tr>
@@ -25,3 +24,4 @@
 <br>
 
 <%= link_to 'New Profile', new_profile_path %>
+<% end %>
