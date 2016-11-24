@@ -9,3 +9,4 @@ class User < ActiveRecord::Base
   	# self.role == requested_role.to_s
   end
 end
+
