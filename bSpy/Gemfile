@@ -51,6 +51,12 @@ gem "unicorn-rails"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'rspec-rails', '~> 3.5'
+
+  # Run against the master branch
+  # %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  # gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
 end
 
 group :development do
@@ -60,4 +66,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
