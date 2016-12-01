@@ -1,6 +1,6 @@
+<% if can? :manage, Profile %>
 <h1>New Profile</h1>
 
-<% if can? :create, Profile %>
 <%= render 'form' %>
 <%= link_to 'Back', profiles_path %>
 <% end %>

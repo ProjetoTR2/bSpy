@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
+<% if can? :manage, Profile %>
 <h1>Listing Profiles</h1>
-<% if can? :create, Profile %>
 <table>
   <thead>
     <tr>
