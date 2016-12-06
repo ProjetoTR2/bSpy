@@ -13,6 +13,12 @@
             </div>
             <div class="row">
                 <div class="input-field col s6 offset-s3">
+                    <%= f.label :profile %><br />
+                    <%= f.select :profile_id, options_for_select(Profile.all.map { |c| [c.name, c.id] }), {class: "browser-default"} %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
                     <%= f.label :password, :for =>"pass_field"%>
                     <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
