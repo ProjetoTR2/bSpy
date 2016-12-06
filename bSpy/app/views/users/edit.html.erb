@@ -1,0 +1,7 @@
+<h1>Editing User</h1>
+
+<% if can? :edit, User %>
+<%= render 'form' %>
+	<%= link_to 'Show', @user %> |
+	<%= link_to 'Back', users_path %>
+<% end %>

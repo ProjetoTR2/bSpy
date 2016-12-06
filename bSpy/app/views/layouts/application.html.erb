@@ -26,6 +26,9 @@
                 <% if can? :manage, Profile %>
                 <li><a href="/profiles" class="black-text thin">Perfil</a></li>
                 <% end %>
+                <% if can? :manage, User %>
+                    <li><a href="/users" class="black-text thin">Usuários</a></li>
+                <% end %>
                 <li><a href="/imagens" class="black-text thin">Imagens</a></li>
                 <li><a class="dropdown-button black-text thin" href="#" data-activates="dropdown1">Admin<i class="material-icons right"><!-- arrow_drop_down --></i></a></li>
             </ul>
