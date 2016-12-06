@@ -7,6 +7,12 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => 'valign'}) do |f| %>
             <div class="row">
                 <div class="input-field col s6 offset-s3">
+                    <%= f.label :name, :for =>"name_field" %>
+                    <%= f.text_field :name, autofocus: true, :class => "validate", :id =>"name_field" %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
                     <%= f.label :email, :for =>"email_field" %>
                     <%= f.email_field :email, autofocus: true, :class => "validate", :id =>"email_field" %>
                 </div>
