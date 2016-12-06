@@ -37,7 +37,11 @@ gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 gem 'devise'
 gem 'cancan'
 
+# Servidor multithread
 gem "unicorn-rails"
+
+# Para exibir mensagens de erro no log do heroku
+gem "rails_12factor"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

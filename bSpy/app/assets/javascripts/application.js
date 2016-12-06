@@ -13,12 +13,9 @@
 //= require_tree .
 //= require jquery_ujs
 //= require fancybox
-//= require turbolinks
 
 
 //= require materialize-sprockets
-
-
 
 
 $(document).ready(function() {
