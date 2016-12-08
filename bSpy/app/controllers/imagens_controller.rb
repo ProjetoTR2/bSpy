@@ -26,6 +26,10 @@ class ImagensController < ApplicationController
   	send_data @image.file, :type => 'image/png', :disposition => 'inline'
   end
 
+  def mostrar
+    @image = Image.find(params[:id])
+  end
+
   def pesquisarData
     @data = params[:image][:data_de_criacao]
     @ano,@mes,@dia = @data.split("/",3)
@@ -34,8 +38,14 @@ class ImagensController < ApplicationController
   end
 
   def pesquisarLocal
-    @data = params[:image][:local]
-    @images = Image.where("local = ?",@data)
+    @local = params[:image][:local]
+    @images = Image.where("local = ?",@local)
+  end
+
+  def pesquisarCamera
+    @camera = params[:image][:cameraid]
+    puts @camera
+    @images = Image.where("cameraid = ?",@camera)
   end
 
 end
