@@ -1,7 +1,20 @@
-<h1>Editing User</h1>
 
-<% if can? :edit, User %>
-<%= render 'form' %>
-	<%= link_to 'Show', @user %> |
-	<%= link_to 'Back', users_path %>
-<% end %>
+
+
+<div class="container">
+	<% if can? :edit, User %>
+	<br>
+    
+    <div class="row center-align">
+        <h3 class="thin">Editing User</h3>
+    </div>
+	
+	<%= render 'form' %>
+	<br>
+	<div class="row center-align">
+		<%= link_to 'Show', @user,:class=>"waves-effect waves-teal btn-flat"  %> |
+		<%= link_to 'Back', users_path, :class=>"waves-effect waves-teal btn-flat"  %>
+	</div>
+	<% end %>
+
+</div>
