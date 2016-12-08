@@ -1,21 +1,25 @@
-<%= form_for(@profile) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div class="container">
+    <%= form_for(@profile) do |f| %>
+        <% if @profile.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-      <ul>
-      <% @profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                <ul>
+                    <% @profile.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div class = "row">
+            <div class="input-field col s6 offset-s3">
+                <%= f.label :name, :for =>"name_field" %>
+                <%= f.text_field :name, autofocus: true, :class => "validate", :id =>"name_field" %>
+            </div>
+        </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <div class="actions center-align">
+                <%= f.submit "Submit", :class=>"waves-effect waves-light btn" %>
+        </div>
+    <% end %>
+</div>
