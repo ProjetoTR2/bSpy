@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   end
 
   resources :users
+
+  resources :imagens do
+    member do
+      get 'mostrar'
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -19,13 +25,15 @@ Rails.application.routes.draw do
    get '/home' => 'home#home'
    get '/imagens' => 'imagens#index'
 
-   get 'show_image' => 'imagens#show_image'
-
    post '/salvar' => 'imagens#salvar'
+
+   get 'show_image' => 'imagens#show_image'
 
    get '/pesquisarData' =>'imagens#pesquisarData'
 
    get '/pesquisarLocal' => 'imagens#pesquisarLocal'
+
+   get '/pesquisarCamera' => 'imagens#pesquisarCamera'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

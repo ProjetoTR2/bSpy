@@ -20,9 +20,9 @@
                         <div class="col s4">
                             <div class="card">
                                 <div class="card-image">
-                                    <a id="single_image" href="<%url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200")%>">
-                                    <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
-                                    </a>
+                                    <%= link_to mostrar_imagen_path(image) do %>
+                                        <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
+                                    <% end %>
                                     <span class="card-title"><%= image.name %></span>
                                 </div>
                                 <div class="card-content">
@@ -47,6 +47,13 @@
                     <h3>Pesquisa por local</h3>
                     <%= form_for Image.new, url: {action: "pesquisarLocal"},html:{method:"get"} do |f| %>
                         <%= f.text_field :local %>
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
+                    <% end %>
+                </div>
+                <div class="col s8">
+                    <h3>Pesquisa por câmera</h3>
+                    <%= form_for Image.new, url: {action: "pesquisarCamera"},html:{method:"get"} do |f| %>
+                        <%= f.text_field :cameraid %>
                         <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     <% end %>
                 </div>
