@@ -1,7 +1,20 @@
-<h1>Editing Profile</h1>
 
-<% if can? :edit, Profile %>
-<%= render 'form' %>
-	<%= link_to 'Show', @profile %> |
-	<%= link_to 'Back', profiles_path %>
-<% end %>
+
+
+<div class="container">
+	<% if can? :edit, Profile %>
+	<br>
+    
+    <div class="row center-align">
+        <h3 class="thin">Editing Profile</h3>
+    </div>
+	
+	<%= render 'form' %>
+	<br>
+	<div class="row center-align">
+		<%= link_to 'Show', @profile,:class=>"waves-effect waves-teal btn-flat"  %> |
+		<%= link_to 'Back', profiles_path, :class=>"waves-effect waves-teal btn-flat"  %>
+	</div>
+	<% end %>
+
+</div>
