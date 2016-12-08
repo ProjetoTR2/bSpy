@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
    get '/pesquisarData' =>'imagens#pesquisarData'
 
+   get '/pesquisarLocal' => 'imagens#pesquisarLocal'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

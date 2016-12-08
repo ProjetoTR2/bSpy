@@ -15,6 +15,8 @@ class ImagensController < ApplicationController
   	@imagem.name = params[:name]
     @imagem.data_de_criacao = DateTime.now
   	@imagem.file = Base64.decode64(params[:file])
+    @imagem.local = params[:local]
+    @imagem.cameraid = params[:cameraid]
   	@imagem.save
   end
 
@@ -29,6 +31,11 @@ class ImagensController < ApplicationController
     @ano,@mes,@dia = @data.split("/",3)
     # @images = Image.where("to_date(data_de_criacao,'DD/MM/YY') =  ?",@data)
     @images = Image.where("date_part('year',data_de_criacao) = ? and date_part('month',data_de_criacao) = ? and date_part('day',data_de_criacao) = ?",@ano,@mes,@dia)
+  end
+
+  def pesquisarLocal
+    @data = params[:image][:local]
+    @images = Image.where("local = ?",@data)
   end
 
 end

@@ -43,6 +43,13 @@
                         <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     <% end %>
                 </div>
+                <div class="col s8">
+                    <h3>Pesquisa por local</h3>
+                    <%= form_for Image.new, url: {action: "pesquisarLocal"},html:{method:"get"} do |f| %>
+                        <%= f.text_field :local %>
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
+                    <% end %>
+                </div>
             </div>
     </body>
 </html>
