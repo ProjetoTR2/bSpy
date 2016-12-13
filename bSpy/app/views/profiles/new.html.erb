@@ -1,6 +1,15 @@
-<% if can? :manage, Profile %>
-<h1>New Profile</h1>
+<div class="container">
+	<% if can? :manage, Profile %>
+	<br>
+	
+    <div class="row center-align">
+        <h3 class="thin">New Profile</h3>
+    </div>
 
-<%= render 'form' %>
-<%= link_to 'Back', profiles_path %>
-<% end %>
+	<%= render 'form' %> 
+	<br>
+	<div class="row center-align">
+		<%= link_to 'Back', profiles_path, :class=>"waves-effect waves-teal btn-flat" %>
+    </div>
+	<% end %>
+</div>
