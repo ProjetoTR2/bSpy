@@ -8,6 +8,10 @@ class ImagensController < ApplicationController
   	@images = Image.all
   end
 
+  def edit
+    @image = Image.find(params[:id])
+  end
+
   def salvar
   	p params
   	p params[:file].size
@@ -47,5 +51,31 @@ class ImagensController < ApplicationController
     puts @camera
     @images = Image.where("cameraid = ?",@camera)
   end
+
+  def update
+    @image = Image.find(params[:id])
+    if @image.update(image_params)
+      redirect_to '/imagens'
+    else
+      redirect_to '/imagens'
+    end
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to '/imagens'
+  end
+
+  private
+    # Using a private method to encapsulate the permissible parameters
+    # is just a good pattern since you'll be able to reuse the same
+    # permit list between create and update. Also, you can specialize
+    # this method with per-user checking of permissible attributes.
+    def image_params
+      params.require(:image).permit(:name)
+    end
 
 end
