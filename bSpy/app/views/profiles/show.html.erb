@@ -1,9 +1,25 @@
-<% if can? :manage, Profile %>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
-<% end %>
+
+
+<div class="container">
+	<% if can? :manage, Profile %>
+	<p id="notice"><%= notice %></p>
+	<br>
+    
+    <div class="row center-align">
+        <h3 class="thin">Profile</h3>
+    </div>
+    <div class="row center-align">
+		<p>
+		  <strong>Name - </strong>
+		  <%= @profile.name %>
+		</p>
+    </div>
+
+	<br>
+	<div class="row center-align">
+		<%= link_to 'Edit', edit_profile_path(@profile),:class=>"waves-effect waves-teal btn-flat"  %> |
+		<%= link_to 'Back', profiles_path, :class=>"waves-effect waves-teal btn-flat"  %>
+	</div>
+	<% end %>
+
+</div>
