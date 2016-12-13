@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>bSpy</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>    
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag "app.generic" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -17,11 +17,15 @@
 </ul>
 
 <div class="navbar-fixed">
-    <nav class = " blue-grey lighten-5">
+    <nav class = "blue-grey lighten-5">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center condensed light black-text thin">bSpy</a>
+            <div class="brand-logo center">
+              <a href="#!" class="condensed light black-text thin">
+                <img src="/favicon.ico"/> <span>bSpy</span>
+              </a>
+            </div>
             <% if user_signed_in? %>
-            <ul class="left hide-on-med-and-down">
+            <ul class="nav left hide-on-med-and-down">
                 <li><a href="/home" class="black-text thin">Home</a></li>
                 <% if can? :manage, Profile %>
                 <li><a href="/profiles" class="black-text thin">Perfil</a></li>
@@ -50,7 +54,7 @@
   </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-01" style="background: #4682B4;">
       <ul class="nav navbar-nav">
-        
+
         <li><a href="/imagens" style="color:white;">Imagens</a></li>
 
         <li role="presentation" class="dropdown">
@@ -99,4 +103,7 @@
 </footer> -->
 
 </body>
+<div class = "footer blue-grey lighten-5">
+    <img align="right" src="/favicon.ico"/>
+</div>
 </html>
