@@ -1,13 +1,30 @@
-<% if can? :manage, User %>
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-<p>
-	<strong>Email:</strong>
-	<%= @user.email %>
-</p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<% end %>
+
+<div class="container">
+	<% if can? :manage, User %>
+	<p id="notice"><%= notice %></p>
+	<br>
+    
+    <div class="row center-align">
+        <h3 class="thin">Profile</h3>
+    </div>
+    <div class="row center-align">
+		<p>
+		  <strong>Name - </strong>
+		  <%= @user.name %>
+		</p>
+    </div>
+    <div class="row center-align">
+		<p>
+		  <strong>Email - </strong>
+		  <%= @user.email %>
+		</p>
+    </div>
+
+	<br>
+	<div class="row center-align">
+		<%= link_to 'Edit', edit_user_path(@user),:class=>"waves-effect waves-teal btn-flat"  %> |
+		<%= link_to 'Back', users_path, :class=>"waves-effect waves-teal btn-flat"  %>
+	</div>
+	<% end %>
+
+</div>
