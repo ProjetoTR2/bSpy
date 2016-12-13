@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
    post '/salvar' => 'imagens#salvar'
 
-   post 'imagens/:id', :to => 'imagens#update'
+   post 'imagens/:id/update', :to => 'imagens#update'
 
    get 'imagens/:id', :to => 'imagens#edit'
 

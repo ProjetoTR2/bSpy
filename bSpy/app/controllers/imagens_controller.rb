@@ -53,14 +53,11 @@ class ImagensController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @image.update(imagen_params)
-        format.html {redirect_to @image,notice:'Nome da imagem alterado com sucesso.'}
-        format.json {render:show,status:ok,location:@image}
-      else
-        format.html { render :edit }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+    @image = Image.find(params[:id])
+    if @image.update(image_params)
+      redirect_to '/imagens'
+    else
+      redirect_to '/imagens'
     end
   end
 
@@ -69,7 +66,16 @@ class ImagensController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
-    redirect_to '/home'
+    redirect_to '/imagens'
   end
+
+  private
+    # Using a private method to encapsulate the permissible parameters
+    # is just a good pattern since you'll be able to reuse the same
+    # permit list between create and update. Also, you can specialize
+    # this method with per-user checking of permissible attributes.
+    def image_params
+      params.require(:image).permit(:name)
+    end
 
 end
