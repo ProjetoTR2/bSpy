@@ -13,11 +13,7 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :imagens do
-    member do
-      get 'mostrar'
-    end
-  end
+  resources :imagens
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -27,6 +23,14 @@ Rails.application.routes.draw do
 
    post '/salvar' => 'imagens#salvar'
 
+   post 'imagens/:id', :to => 'imagens#update'
+
+   get 'imagens/:id', :to => 'imagens#edit'
+
+   delete 'imagens/:id', :to => 'imagens#destroy'
+
+   get '/mostrar/:id', :to => 'imagens#mostrar', :as => 'mostrar'
+
    get 'show_image' => 'imagens#show_image'
 
    get '/pesquisarData' =>'imagens#pesquisarData'
@@ -34,6 +38,8 @@ Rails.application.routes.draw do
    get '/pesquisarLocal' => 'imagens#pesquisarLocal'
 
    get '/pesquisarCamera' => 'imagens#pesquisarCamera'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

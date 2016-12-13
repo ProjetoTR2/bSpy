@@ -8,6 +8,10 @@ class ImagensController < ApplicationController
   	@images = Image.all
   end
 
+  def edit
+    @image = Image.find(params[:id])
+  end
+
   def salvar
   	p params
   	p params[:file].size
@@ -46,6 +50,26 @@ class ImagensController < ApplicationController
     @camera = params[:image][:cameraid]
     puts @camera
     @images = Image.where("cameraid = ?",@camera)
+  end
+
+  def update
+    respond_to do |format|
+      if @image.update(imagen_params)
+        format.html {redirect_to @image,notice:'Nome da imagem alterado com sucesso.'}
+        format.json {render:show,status:ok,location:@image}
+      else
+        format.html { render :edit }
+        format.json { render json: @image.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    redirect_to '/home'
   end
 
 end
