@@ -8,6 +8,11 @@
 	<strong>Email:</strong>
 	<%= @user.email %>
 </p>
+<p>
+	<strong>Profile_id:</strong>
+	<%= @user.profile_id %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <% end %>
