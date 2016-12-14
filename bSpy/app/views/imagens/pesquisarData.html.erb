@@ -8,19 +8,20 @@
     </head>
     <body>
             
-            <div class="row">
-                <br><br>
-                <h4 class="light center-align">Imagens Salvas</h4>
+        <div class="container home">
+            <div class="row center-align">
+                <br>
+                <h3 class="thin">Imagens Salvas</h3>
             </div>
             
             </br>
-            <div class="container home">
+            <div class="center-align">
                 <% @images.each do |image| %>
                     <div class="row col s4">
                         <div class="col s4">
                             <div class="card">
                                 <div class="card-image">
-                                    <%= link_to mostrar_imagen_path(image) do %>
+                                    <%= link_to mostrar_path(image) do %>
                                         <%= image_tag url_for(:controller => "imagens", :action => "show_image", :id => image.id, :size => "300x200") %>
                                     <% end %>
                                     <span class="card-title"><%= image.name %></span>
@@ -29,34 +30,53 @@
                                     <p><%= image.data_de_criacao %></p>
                                 </div>
                                 <div class="card-action">
+                                    <%= link_to 'Editar', {action: :edit, id: image.id}, method: :get %>
+                                    <%= link_to 'Deletar', { action: :destroy, id: image.id }, method: :delete%>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 <%end%>
-                <hr>
-                <div class="col s8">
-                    <h3>Pesquisa por data</h3>
-                    <!-- <input type="text" style="display:none;" id="datainput"/> -->
-                    <%= form_for Image.new, url: {action: "pesquisarData"}, html:{method:"get"} do |f| %>
-                        <%= f.text_field :data_de_criacao, class: "datepicker" %>
-                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
-                    <% end %>
-                </div>
-                <div class="col s8">
-                    <h3>Pesquisa por local</h3>
-                    <%= form_for Image.new, url: {action: "pesquisarLocal"},html:{method:"get"} do |f| %>
-                        <%= f.text_field :local %>
-                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
-                    <% end %>
-                </div>
-                <div class="col s8">
-                    <h3>Pesquisa por câmera</h3>
-                    <%= form_for Image.new, url: {action: "pesquisarCamera"},html:{method:"get"} do |f| %>
-                        <%= f.text_field :cameraid %>
-                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
-                    <% end %>
-                </div>
             </div>
+            <hr>
+            <div class="container">
+                <br>
+                <h6 class = "thin">Pesquisa por data</h6>
+                <!-- <input type="text" style="display:none;" id="datainput"/> -->
+                <%= form_for Image.new, url: {action: "pesquisarData"},html:{method:"get"} do |f| %>
+                    <div class="row col s6">
+                        <%=f.text_field :data_de_criacao, class: "datepicker" %>
+                    </div>
+                    <div class="row actions center-align">
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
+                    </div>
+                <% end %>
+            </div>
+            <div class="container">
+                <br>
+                <h6 class = "thin">Pesquisa por local</h6>
+                <%= form_for Image.new, url: {action: "pesquisarLocal"},html:{method:"get"} do |f| %>
+                    <div class="row col s6">
+                        <%= f.text_field :local %>
+                    </div>
+                    <div class="row actions center-align">
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
+                    </div>
+                <% end %>
+            </div>
+            <div class="container">
+                <br>
+                <h6 class = "thin">Pesquisa por câmera</h6>
+                <%= form_for Image.new, url: {action: "pesquisarCamera"},html:{method:"get"} do |f| %>
+                    <div class="row col s6">
+                        <%= f.text_field :cameraid %>
+                    </div>
+                    <div class="row actions center-align">
+                        <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
     </body>
 </html>

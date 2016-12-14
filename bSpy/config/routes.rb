@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
    post '/salvar' => 'imagens#salvar'
 
+   post '/autenticar' => 'users#autenticar'
+
    post 'imagens/:id/update', :to => 'imagens#update'
 
    get 'imagens/:id', :to => 'imagens#edit'
