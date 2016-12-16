@@ -11,15 +11,20 @@
                 </ul>
             </div>
         <% end %>
-        <div class = "row"> 
+        <div class = "row">
             <div class="input-field col s6 offset-s3">
                 <%= f.label :name, :for =>"name_field" %>
                 <%= f.text_field :name, autofocus: true, :class => "validate", :id =>"name_field" %>
             </div>
         </div>
+        <div class="row">
+          <div class="col offset-l3">
+            <%= link_to 'Voltar', profiles_path, :class=>"waves-effect waves-teal btn-flat" %>
+          </div>
 
-        <div class="actions center-align">
-                <%= f.submit "Submit", :class=>"waves-effect waves-light btn" %>
+          <div class="actions col l2">
+                  <%= f.submit "Criar", :class=>"waves-effect waves-light btn" %>
+          </div>
         </div>
     <% end %>
 </div>

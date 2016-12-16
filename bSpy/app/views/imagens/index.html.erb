@@ -7,13 +7,13 @@
         <%= csrf_meta_tags %>
     </head>
     <body>
-            
+
         <div class="container home">
             <div class="row center-align">
                 <br>
                 <h3 class="thin">Imagens Salvas</h3>
             </div>
-            
+
             </br>
             <div class="center-align">
                 <% @images.each do |image| %>
@@ -48,7 +48,7 @@
                     <div class="row col s6">
                         <%=f.text_field :data_de_criacao, class: "datepicker" %>
                     </div>
-                    <div class="row actions center-align">
+                    <div class="row actions right-align">
                         <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     </div>
                 <% end %>
@@ -60,7 +60,7 @@
                     <div class="row col s6">
                         <%= f.text_field :local %>
                     </div>
-                    <div class="row actions center-align">
+                    <div class="row actions right-align">
                         <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     </div>
                 <% end %>
@@ -72,11 +72,19 @@
                     <div class="row col s6">
                         <%= f.text_field :cameraid %>
                     </div>
-                    <div class="row actions center-align">
+                    <div class="row actions right-align">
                         <%= f.submit 'Enviar',:class=>"btn waves-effect waves-light" %>
                     </div>
                 <% end %>
             </div>
         </div>
     </body>
+    <footer class="page-footer blue-grey simples">
+      <div class="row">
+        <div class="col l3 offset-l9">
+          <h6 class="white-text"><b>bSpy</b> Sistema de monitoramento</h6>
+        </div>
+      </div>
+    </footer>
+
 </html>

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>bSpy</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag "app.generic" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -20,8 +21,8 @@
     <nav class = "blue-grey lighten-5">
         <div class="nav-wrapper">
             <div class="brand-logo center">
-              <a href="#!" class="condensed light black-text thin">
-                <img src="/favicon.ico"/> <span>bSpy</span>
+              <a href="home" class="condensed light black-text thin">
+                <img src="/logo.jpg"/>
               </a>
             </div>
             <% if user_signed_in? %>
@@ -103,7 +104,4 @@
 </footer> -->
 
 </body>
-<div class = "footer blue-grey lighten-5">
-    <img align="right" src="/favicon.ico"/>
-</div>
 </html>
