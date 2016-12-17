@@ -2,15 +2,13 @@
 <div class="container">
 	<% if can? :manage, User %>
 	<br>
-	
+
     <div class="row center-align">
-        <h3 class="thin">New User</h3>
+        <h3 class="thin">Novo usuário</h3>
     </div>
 
-	<%= render 'form' %> 
+	<%= render 'form' %>
 	<br>
-	<div class="row center-align">
-		<%= link_to 'Back', users_path, :class=>"waves-effect waves-teal btn-flat" %>
-    </div>
+
 	<% end %>
 </div>
