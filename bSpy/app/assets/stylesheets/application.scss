@@ -12,9 +12,135 @@
  *
  */
 
-
 @import "materialize/components/color";
 
 @import "fancybox";
 
 @import "materialize";
+
+//MOBILE ONLY STYLES
+@media #{$small-and-down}{
+  //LOGIN
+   nav.navbar-extended{
+     height: 9em !important;
+   }
+
+   .brand-logo img{
+     height: 3em ;
+     margin-top: 25%;
+   }
+
+   //HOME
+   body > div.descricao_pag > div:nth-child(1) > div:nth-child(1) > div > img{
+     height: 12em;
+   }
+   body > div.descricao_pag > div:nth-child(1) > div:nth-child(1) > div > p{
+     font-size: 4em;
+   }
+   .container.home i{
+     font-size: 7em;
+   }
+
+   .container.creditos{
+     margin-top: 4em;
+     text-align: center;
+   }
+}
+
+//TABLET ONLY STYLES
+@media #{$medium-and-up}{
+  //NAV
+  .navbar-extended{
+    height:4.5em;
+  }
+
+  //LOGIN
+   .brand-logo img{
+     height: 1.5em;
+     margin-top: 25%;
+   }
+
+
+   //HOME BODY
+   body > div.descricao_pag > div:nth-child(1) > div:nth-child(1) > div > p{
+     font-size: 1.5em;
+   }
+
+   .classe_home p{
+     font-size: 1.5em;
+   }
+
+   .container.maior{
+     min-height: 15em;
+     margin-bottom: 4em;
+   }
+
+   //HOME FOOTER
+   footer.page-footer h5{
+       font-size: 4em;
+   }
+   body > div.descricao_pag > footer > div.container > div > div.col.s12.m4.l4.offset-l2 > h5{
+      font-size: 3em;
+   }
+
+   .container.creditos{
+     margin-top: 4em;
+     text-align: center;
+   }
+
+}
+
+//DESKTOP ONLY STYLES
+@media #{$large-and-up}{
+  //NAV
+  .navbar-extended{
+    height:4.5em;
+  }
+
+  //LOGIN
+   .brand-logo img{
+     height: 1.5em;
+     margin-top: 10px;
+   }
+
+   //BODY
+   .container.maior{
+       min-height: 33em;
+       margin-bottom: 4em;
+   }
+
+   .container.home.valign-wrapper{
+      min-height: 16em;
+      margin-bottom: 4em;
+   }
+
+   body > div.descricao_pag > div:nth-child(1) > div:nth-child(1) > div > p,
+   .classe_home p{
+     font-size: 1em;
+   }
+
+   .container.home.material-icons i{
+     font-size: 5em;
+   }
+
+   //FOOTER
+   footer.page-footer img{
+       height: 1em;
+   }
+   //HOME FOOTER
+
+   footer.page-footer h5,
+   body > div.descricao_pag > footer > div.container > div > div.col.s12.m4.l4.offset-l2 > h5{
+      font-size: 2em;
+   }
+   .container.creditos{
+      min-height: 32em;
+      width: 90%;
+      margin-top: 4em;
+      margin-bottom: 2em;
+      text-align: left;
+   }
+   .container.creditos p{
+     font-size: 1em;
+   }
+}

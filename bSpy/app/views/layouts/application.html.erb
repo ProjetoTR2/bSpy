@@ -4,46 +4,58 @@
   <title>bSpy</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag "app.generic" %>
+  <%= stylesheet_link_tag    "app.generic" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
 <body>
+</head>
 
-<ul id="dropdown1" class="dropdown-content">
-<!--   <li><a href="#!">one</a></li>
+<!-- <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">one</a></li>
   <li><a href="#!">two</a></li>
   <li class="divider"></li>
-  <li><a href="#!">three</a></li> -->
-</ul>
+  <li><a href="#!">three</a></li>
+</ul> -->
 
-<div class="navbar-fixed">
-    <nav class = "blue-grey lighten-5">
-        <div class="nav-wrapper">
-            <div class="brand-logo center">
-              <a href="home" class="condensed light black-text thin">
-                <img src="/logo.jpg"/>
-              </a>
-            </div>
-            <% if user_signed_in? %>
-            <ul class="nav left hide-on-med-and-down">
-                <li><a href="/home" class="black-text thin">Home</a></li>
-                <% if can? :manage, Profile %>
-                <li><a href="/profiles" class="black-text thin">Perfil</a></li>
-                <% end %>
-                <% if can? :manage, User %>
-                    <li><a href="/users" class="black-text thin">Usuários</a></li>
-                <% end %>
-                <li><a href="/imagens" class="black-text thin">Imagens</a></li>
-<!--                 <li><a class="dropdown-button black-text thin" href="#" data-activates="dropdown1">Admin<i class="material-icons right">arrow_drop_down</i></a></li> -->
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><div class="black-text thin" style="padding-right:30px"><%= current_user.name %></div></li>
-                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => "black-text thin right" %></li>
-            <% end %>
+<nav class = "navbar-extended blue-grey lighten-5">
+    <div class="nav-wrapper">
+        <div class="brand-logo center">
+          <a href="#!" class="condensed light black-text thin">
+            <img src="/logo.jpg"/>
+          </a>
         </div>
-    </nav>
-</div>
+        <% if user_signed_in? %>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black">menu</i></a>
+          <ul class="left hide-on-med-and-down" id="nav-mobile">
+              <li><a href="/home" class="black-text thin">Home</a></li>
+              <% if can? :manage, Profile %>
+              <li><a href="/profiles" class="black-text thin">Perfil</a></li>
+              <% end %>
+              <% if can? :manage, User %>
+                  <li><a href="/users" class="black-text thin">Usuários</a></li>
+              <% end %>
+              <li><a href="/imagens" class="black-text thin">Imagens</a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down" id="nav-mobile">
+            <li><div class="black-text thin" style="padding-right:30px"><%= current_user.name %></div></li>
+            <li><%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => "black-text thin right" %></li>
+          </ul>
+
+          <ul class="side-nav" id="mobile-demo">
+              <li><a href="/home" class="black-text thin">Home</a></li>
+              <% if can? :manage, Profile %>
+              <li><a href="/profiles" class="black-text thin">Perfil</a></li>
+              <% end %>
+              <% if can? :manage, User %>
+                  <li><a href="/users" class="black-text thin">Usuários</a></li>
+              <% end %>
+              <li><a href="/imagens" class="black-text thin">Imagens</a></li>
+              <li><div class="black" style="padding-right:30px"><%= current_user.name %></div></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete , :class => "black-text thin left" %></li>
+          </ul>
+        <% end %>
+    </div>
+</nav>
 
 
 <!-- <nav class="navbar navbar-default" role="navigation">
